@@ -25,4 +25,4 @@ jobs:
   - put: deploy-apps-movie-service
     params:
       manifest: apps-movie-service/manifest.yml
-      path: package-output/apps-movie-service.jar
+      path: package-output/apps-movie-service.war

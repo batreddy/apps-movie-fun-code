@@ -2,7 +2,7 @@
 
 set -e +x
 
-pushd apps-movie-service-code
+pushd apps-movie-fun-code
   echo "Packaging JAR"
   ./mvnw clean package -DskipTests
 popd

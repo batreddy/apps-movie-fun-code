@@ -1,0 +1,28 @@
+resources:
+- name: apps-movie-fun-code
+  type: git
+  source:
+    uri: https://github.com/batreddy/apps-movie-fun-code.git  #<---- REPLACE ME
+    branch: concourse_deployment
+
+- name: deploy-apps-movie-service
+  type: cf
+  source:
+    api: https://api.sys.pikes.pal.pivotal.io        #<---- REPLACE ME
+    username: {{cf-user}}
+    password: {{cf-password}}
+    organization: sbatreddy-pal    #<---- REPLACE ME
+    space: sandbox         #<---- REPLACE ME
+    skip_cert_check: true
+
+jobs:
+- name: build
+  public: true
+  plan:
+  - get: apps-movie-fun-code
+  - task: package
+    file: apps-movie-fun-code/ci/tasks/package.yml
+  - put: deploy-apps-movie-service
+    params:
+      manifest: apps-movie-service/manifest.yml
+      path: package-output/apps-movie-service.jar

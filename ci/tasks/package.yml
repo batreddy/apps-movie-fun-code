@@ -1,0 +1,16 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: java
+    tag: "8"
+
+inputs:
+- name: apps-movie-service-source
+
+outputs:
+- name: package-output
+
+run:
+  path: apps-movie-service-source/ci/tasks/package.sh

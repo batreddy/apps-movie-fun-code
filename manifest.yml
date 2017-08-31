@@ -8,3 +8,4 @@ applications:
   path: target/apps-movie-service.war
   services:
     - movie-sql
+    

@@ -1,4 +1,3 @@
---
 resources:
 - name: apps-movie-fun-code
   type: git

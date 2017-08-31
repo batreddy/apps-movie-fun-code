@@ -3,7 +3,7 @@ resources:
   type: git
   source:
     uri: https://github.com/batreddy/apps-movie-fun-code.git  #<---- REPLACE ME
-    branch: concourse_deployment
+    branch: spring-boot
 
 - name: deploy-apps-movie-service
   type: cf

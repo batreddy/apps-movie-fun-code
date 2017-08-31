@@ -7,10 +7,10 @@ image_resource:
     tag: "8"
 
 inputs:
-- name: apps-movie-service-source
+- name: apps-movie-fun-code
 
 outputs:
 - name: package-output
 
 run:
-  path: apps-movie-service-source/ci/tasks/package.sh
+  path: apps-movie-fun-code/ci/tasks/package.sh

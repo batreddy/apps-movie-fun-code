@@ -1,0 +1,10 @@
+applications:
+- name: apps-movie-service
+  instances: 1
+  memory: 1024M
+  disk_quota: 1024M
+  random-route: true
+  stack: cflinuxfs2
+  path: target/apps-movie-service.war
+  services:
+    - attendee-mysql
